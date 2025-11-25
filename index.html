@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 선택자 연습</title>
+    <link rel="stylesheet" href="style.css"><!-- 외부 스타일: 공통 스타일 -->
+    <style>
+    /* 내부 스타일 */    
+    /* 전체 선택자: *는 모든 태그 선택 */    
+    * { margin: 0; padding: 0; }
+    /* 태그 { 스타일속성: 값; }  */
+    p { padding: 10px; background-color:rgb(0, 0, 86); color:#ffffff; }
+    /* .클래스선택자 { 스타일속성: 값; }  */
+    .page { clear:both; width: 100vw; height: 100vh; }
+    /* #아이디선택자 { 스타일속성: 값; }  */
+    #page1 { background-color: aquamarine; }
+    #page2 { background-color: bisque; }
+    #page3 { background-color: gold; }
+    #page4 { background-color: cadetblue; }
+    .page_title { text-align: center; }
+    /* 후손 선택자 */
+    .page .page_title { padding-top: 1.6em; }
+    .comment { display:none; }
+
+    .hd { position: fixed; width: 100%; top: 0; left: 0; z-index: 999; }
+    #gnb li { list-style: none; float: left; width: 20%; }
+    #gnb li a { display:block; line-height:90px; color: deeppink; font-size:28px; 
+    text-align: center; text-decoration: none; background-color: transparent; }
+    #gnb li:hover a { background-color:rgba(24, 26, 28, 0.75); color:#fff; } 
+    #gnb .profile { display:block; height: 90px;  text-align: center; }
+    #gnb .profile img { display:block; width: 90px; height:90px; overflow:hidden; 
+    border-radius:50px; margin: 0 auto; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header class="hd" style="border-bottom:1px solid #333">
+        <div class="comment">
+            <h1>CSS 선택자 및 적용 방법</h1>
+            <p>CSS 선택자는 해당 요소(태그)에서 서식(Style)을 부여할 대상을 지정하는 것을 CSS 선택이라고 하고, 
+                이 때 사용되는 키워드를 CSS 선택자라고 함</p>
+            <p>인라인 스타일 방식은 해당 요소에 style="border-bottom:5px solid #333"와 같이 직접 
+                style 속성으로 서식을 지정하는 방법</p>
+            <p>내부 스타일은 현재 문서의 style 태그 안에 스타일 지정하는 방식으로 현재 문서에만 작성한 스타일을 
+                적용하고자 할 때 사용되는 방식</p>    
+            <p>외부 스타일은 공통되는 스타일을 별도의 css 파일로 작성한 후 link 태그로 스타일 내용을 불러와
+                연결하는 방식</p>        
+        </div>
+        <nav id="gnb">
+            <ul>
+                <li>
+                    <div class="profile"><img src="profile.jpg" alt="프사"></div>
+                </li>
+                <li><a href="#page1">Intro</a></li>
+                <li><a href="#page2">Skill</a></li>
+                <li><a href="#page3">Portfolio</a></li>
+                <li><a href="#page4">Contact US</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="content">
+        <figure class="vs">
+            <h2 class="page_title"></h2>
+            <video src="vs.mp4" autoplay muted></video>
+        </figure>
+        <section class="page" id="page1">
+            <h2 class="page_title">Intro</h2>
+
+        </section>
+        <section class="page" id="page2">
+            <h2 class="page_title">Skill&Ability</h2>
+
+        </section>
+        <section class="page" id="page3">
+            <h2 class="page_title">Portfolio</h2>
+
+        </section>
+        <section class="page" id="page4">
+            <h2 class="page_title">Contact US</h2>
+
+        </section>
+    </main>
+    <footer class="ft">
+
+    </footer>
+</div>    
+</body>
+</html>
